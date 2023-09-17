@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no"><!--Balise pour le responsive-->
+        <link rel="stylesheet" href="css/main.css">
+<!-- SEO - Metadonnées importantes pour le référencement du site  -->
+        <meta name="author" content="Cyril PHOLOPPE">
+		<meta name="description" content="Mon super site sur l'actualité de la tech et des sciences.">
+		<meta name="keywords" content="actualité,science,technologie">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicon144.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon72.png">
+		<link rel="apple-touch-icon-precomposed" href="images/favicon57.png">
+		<link rel="shortcut icon" href="images/favicon.jpg">
+<!--  SEO + Les metas minimum pour les réseaux sociaux -->
+        <meta property="og:url"                content="http://monsupersite.com" />
+        <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="Mon super site" />
+        <meta property="og:description"        content="Mon super site sur l'actualité de la tech et des sciences." />
+        <meta property="og:image"              content="images/logoBouygues" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@monsupersite" />
+        <meta name="twitter:creator" content="@moimoimoi" />
+
+        <title>Accueil</title>
+    </head>
+    <body>
+<!-- En-tête du site avec un menu avec un titre et une liste de lien -->
+        <header>
+            <h1>Mon site</h1>
+            <nav>
+                <button id="close" href="#">×</button>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="tech.html">Tech</a></li>
+                    <li><a href="science.html">Science</a></li>
+                </ul>
+            </nav>
+            <button id="open" href="#"><img src="images/menu.png" alt="Menu hamburger"/></button>
+        </header>
+
+<!-- Page d'accueil, on retrouve un extrait du dernier article, son logo et son lien pour le consulter en entier. Puis des liens vers d'autres articles -->
+            <main><!-- SEO - Ajout de main pour un balisage sémantique afin d'identifier le contenu principal du site -->
+                <section>
+                    <!-- <article>
+                        <h2>Bouygues Telecom affirme couvrir 95 % de la population en 4G</h2>
+                        <img src="images/logoBouygues.png" alt="Logo Bouygues Télécom">
+                        <p>L'opérateur Bouygues Telecom annonce que son réseau permet désormais de couvrir 95 % de la population en très haut débit mobile, la 4G. Mais sur la couverture du territoire, il reste muet.
+                        Le taux de couverture de la population que donnent régulièrement les opérateurs de téléphonie mobile est-il un indicateur encore pertinent ? C’est une question qui se pose désormais, alors que les quatre principaux acteurs du marché des télécoms en France présentent des statistiques non seulement très élevées — la grande majorité de la population est donc couverte — mais en plus, similaires.</p>
+                        <a href="bouygues-4g.html">En savoir plus</a>
+                    </article> -->
+<!-- SEO mise en place des microdata pour l'article -->
+                    <article itemscope itemtype="http://schema.org/Article">
+	                    <h2 itemprop="name">Bouygues Telecom affirme couvrir 95 % de la population en 4G</h2>
+	                    <img src="images/logoBouygues.png" alt="Logo Bouygues Télécom" itemprop="photo"/>
+	                    <p itemprop="text">L'opérateur Bouygues Telecom annonce que son réseau permet désormais de couvrir 95 % de la population en très haut débit mobile, la 4G. Mais sur la couverture du territoire, il reste muet. Le taux de couverture de la population que donnent régulièrement les opérateurs de téléphonie mobile est-il un indicateur encore pertinent ? C’est une question qui se pose désormais, alors que les quatre principaux acteurs du marché des télécoms en France présentent des statistiques non seulement très élevées — la grande majorité de la population est donc couverte — mais en plus, similaires.</p>
+	                    <a href="bouygues-4g.html">En savoir plus</a>
+                    </article>  
+
+
+                    <aside>
+                        <ul>
+                            <li><a href="course-militaire.html">Comment une app de course à pied pourrait trahir l’emplacement de bases militaires secrètes</a></li>
+                            <li><a href="space-x.html">SpaceX prévoit le premier décollage de la fusée Falcon Heavy pour le 6 février</a></a></li>
+                            <li><a href="singe-chine.html">Deux singes clonés sont nés en Chine : une prouesse scientifique qui pose des questions éthiques</a></li>
+                            <li><a href="facebook-ia.html">Facebook fait appel à un autre Français pour diriger ses travaux en intelligence artificielle</a></li>
+                        </ul>
+                    </aside>
+                </section>
+            </main>
+<!-- Pied de page avec une liste de liens de sites partenaires puis mon nom et mon mail pour me contacter -->
+        <footer>
+            <h3>Nos partenaires</h3>
+            <ul>
+                <!-- Ajout de rel="nofollow" pour empêcher les moteur de recherche de suivre les liens présents dans le footer -->
+                <li><a href="https://www.numerama.com/" rel="nofollow">Numerama</li>
+                <li><a href="http://www.clubic.com/" rel="nofollow">Clubic</a></li>
+                <li><a href="https://www.futura-sciences.com" rel="nofollow">Futura-science</a></li>
+            </ul>
+            <address>
+                Cyril Pholoppe
+                <a href="mailto:cyril.pholoppe@gmail.com" rel="nofollow">Contactez-moi</a>
+            </address>
+        </footer>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			jQuery(document).ready(function($){
+				
+				$("#open").click(function(){
+					$("header nav").addClass("open");
+				});
+				
+				$("#close").click(function(){
+					$("header nav").removeClass("open");
+				});
+			});
+		</script>
+    </body>
+</html>

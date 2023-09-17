@@ -1,0 +1,290 @@
+/*Mise en page pour tout le site*/
+html,body {
+    font-size: 12pt;
+	width: 100%;
+	min-height: 100%;
+    font-family: Arial, sans-serif;
+	margin: 0;
+}
+
+/* Mise en page de l'en-tête */
+header {
+	animation: fadeIn 0.5s linear;/*Ajout d'animation*/
+    height: 40px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+header h1{
+	font-size: 30px;
+	line-height: 40px;
+	text-transform: uppercase;
+	margin: 0;
+	margin-left: 10px;
+	margin-right: 10px;
+	display: inline-block;
+	vertical-align: top;
+}
+header nav{
+	vertical-align: top;
+	display: inline-block;
+	height: 100%;
+}
+header nav ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;/*enlève les puces la liste*/
+	height: 100%;
+}
+header nav ul li{
+	display: inline-block;
+	margin: 0;
+	height: 100%;
+	width: 150px;
+	text-align: center;
+}
+header nav ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 40px;
+	color: #FFF;
+	text-decoration: none;
+	transition: background-color 0.25s linear; /*Ajout d'une transition*/
+}
+header nav ul li a:hover{
+	background-color: gray;
+}
+/*  création d'un état ouvert du menu pour la partie javascrip */
+header nav.open{
+    transform:translateX(0px);
+}
+
+/* Mise en page du corp */
+section{
+	width: 100%;
+}
+
+section article{
+	animation: slideInFromLeft 0.5s ease-out;/*Ajout d'animation*/
+	width: 70%;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px;
+	margin-bottom: 160px;
+}
+section article h2{
+	text-align: justify;
+	text-transform: uppercase;
+}
+section article img{
+	max-width: 30%;
+	margin-right: 10px;
+	float: left;
+}
+section article p{
+	text-align: justify;
+}
+section article a{
+	color: red;
+	text-decoration: none;
+	float: right;
+}
+section article a:hover{
+	text-decoration: underline;
+}
+section aside{
+	animation:slideInFromRight 0.5s ease-out;/*Ajout d'animation*/
+	margin-top: 20px;
+	box-sizing: border-box;
+	width: 30%;
+	padding: 10px;
+	float: right;
+	background-color: #EEE;
+    border-radius: 10px;
+}
+section aside ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+section aside ul li{
+	margin: 5px;
+}
+section aside ul li a{
+	color: #000;
+	text-decoration: none;
+	transition: color 0.25s linear;
+}
+section aside ul li a:hover{
+	color: blue; /*Ajout d'une transition*/
+}
+
+/* Mise en page du footer */
+footer{
+	animation: fadeIn 0.5s linear; /*Ajout d'animation*/
+	color: white;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 150px;
+	background-color: #000;
+	padding: 10px;
+	box-sizing: border-box;
+}
+footer ul{
+	list-style-type: none;
+}
+
+footer a {
+	color: #AAA;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+footer address {
+	position: absolute;
+	text-align: right;
+	bottom: 10px;
+	right: 10px;
+}
+footer address a {
+	display: block;
+	transition: font-size 0.25s linear;/*Ajout d'une transition*/
+}
+footer address a:hover{
+	text-decoration: none;
+	font-size: 14pt;
+}
+
+/* Mise en place d'un bouton menu, Il est caché car il apparait seulement pour la version responsive smartphone */
+#open, #close{
+	display: none; 
+}
+
+/* Ajout des @keyframes pour l'animation */
+@keyframes fadeIn{
+	from { opacity:0; }
+	to { opacity:1; }
+}
+
+@keyframes slideInFromLeft{
+	from { transform:translateX(-100%); }
+	to { transform:translateX(0); }
+}
+
+@keyframes slideInFromRight{
+	from { transform:translateX(100%); }
+	to { transform:translateX(0); }
+}
+
+/* Animation du titre de nos partenaires */
+footer h3{
+	animation:rainbow 5s linear alternate infinite;
+}
+@keyframes rainbow{
+	0%{ color:red }
+	25%{ color:green }
+	50%{ color:yellow }
+	75%{ color:pink }
+	100%{ color:white }
+}
+
+/* Animation - Au survol le lien "En savoir plus" de l'article doit se secouer de droite a gauche une fois */
+section article a:hover{
+	animation:wriggle 0.5s linear;
+	text-decoration:underline;
+}
+
+@keyframes wriggle{
+	0%,100%{ transform:translateX(0) }
+	25%,75%{ transform:translateX(-10px) }
+	50%{ transform:translateX(10px) }
+}
+
+/* Ajout du RESPONSEVE, version tablette */
+@media screen and (max-width: 768px) {
+	header ul li a, section article p, section aside a {
+		font-size:1.2em;
+	}
+	section article{
+		width: 100%;
+		margin-bottom: 0px;
+	}
+	section article img {
+		max-width: 50%;
+	}
+	section aside{
+		width: 100%;
+		margin-bottom: 250px;
+	}
+}        
+
+/* Ajout du RESPONSEVE, version smartphone */
+@media screen and (max-width: 630px) {
+	header{
+		text-align: center;
+	}
+	header nav{
+        position: fixed;
+        z-index: 2;
+        background-color: #000;
+        width: 250px;
+        height: 100vh;
+        left: 0;
+        transform: translateX(-250px);
+        transition :transform 0.25s ease-in-out;
+    }
+    header nav ul{
+        height: auto;
+        margin-top: 40px;
+    }
+    header nav ul li, header nav ul li a{
+        height: auto;
+    }
+	section article{
+		margin-top: 40px;
+	}
+	section article img{
+		max-width: 100%;
+	}
+/* Ajout du bonton menu en hamburger */
+	#open{
+		display: block;
+		position: fixed;
+		height: 30px;
+		left: 10px;
+		top: 5px;
+		background-color: white;
+		border: none;
+		border-radius: 10px;
+	}
+	#open{
+		display: block;
+		position: fixed;
+		height: 30px;
+		left: 10px;
+		top: 5px;
+		background-color: white;
+		border: none;
+		border-radius:1 0px;
+	}
+	#open img{
+		max-height: 100%;
+	}
+	#close{
+		display: block;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 2em;
+		color: #FFF;
+		background-color: transparent;
+		border: none;
+	}
+}        
+
+
