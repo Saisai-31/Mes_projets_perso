@@ -74,6 +74,7 @@ h3{
     justify-content:  end;
     margin-top: 50px;
     margin-bottom: 0;
-   
+    font-style: italic;
+    text-shadow: 3px 5px 5px;
 }
 
