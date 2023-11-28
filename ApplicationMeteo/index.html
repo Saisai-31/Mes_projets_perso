@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Météo</title>
+</head>
+<body>
+    <h1>Apllication de météo</h1>
+    <div id="search-container">
+        <!--Lorsque l'auto-complétion est activée (autocomplete="on"), le navigateur peut suggérer des entrées précédemment saisies ou enregistrées pour ce champ, ce qui facilite la saisie pour l'utilisateur. Lorsque l'auto-complétion est désactivée (autocomplete="off"), le navigateur n'offre pas de suggestions basées sur l'historique des saisies pour ce champ spécifique.-->
+        <input type="text" id="search-input" placeholder="Tapez une ville" autocomplete="off">
+        <button id="search-btn">Cherche</button>
+    </div>
+    <div id="weather-info">
+        <p id="location"></p>
+        <p id="temperature"></p>
+        <p id="description"></p>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
