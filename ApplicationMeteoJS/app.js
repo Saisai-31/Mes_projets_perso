@@ -1,12 +1,36 @@
 //Je créé une constante avec ma clé API
-const APIKEY = "cc286b027192e5c887dbb1bbdaf2c169";
-//Je prends l'url sur Open Weather, je met la ville Parris et j'ajoute mon clé API
+const APIKEY = "b14f81eef1376a658018039c0e57b254";
+
+/* Appel à l'api openweather avec ville en paramètre*/
+let apiCall = function(city){
+    //Je prends l'url sur Open Weather, je met la ville et j'ajoute ma clé API
 //J'ajoute &units=metric pour transformer les température en Celcius
 //J'ajoute &lang=fr pour recevoir les information en francais
-let url = `https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=${APIKEY}&units=metric&lang=fr`;
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b14f81eef1376a658018039c0e57b254&units=metric&lang=fr`;
 
-fetch(url).then((response) =>
-    response.json().then((data) => console.log(data))
-);
+fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+            document.querySelector('#city').innerHTML = "<i class='fa-solid fa-tree-city'></i>" + data.name;
+            document.querySelector('#temp').innerHTML = "<i class='fa-solid fa-temperature-half'></i>" + data.main.temp + '°';
+            document.querySelector('#humidity').innerHTML = "<i class='fa-solid fa-droplet'></i>" + data.main.humidity + '%';
+            document.querySelector('#wind').innerHTML = "<i class='fa-solid fa-wind'></i>" + data.wind.speed + 'km/h';
+        })
+        .catch((error) => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+};
 
-14min39
+/*Ecouteur d'évènement sur la soumission du formaulaire*/
+document.querySelector('form').addEventListener('submit', function (e){
+    e.preventDefault();
+    let ville = document.querySelector('#inputCity').value;
+
+    apiCall(ville);
+});
