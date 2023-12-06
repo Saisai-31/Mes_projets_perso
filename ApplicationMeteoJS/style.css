@@ -3,7 +3,14 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+    margin: 0;
 
+}
+h1{
+    text-align: center;
+    background-color: rgba(149, 198, 1, 0.9);
+    padding: 15px;
+    margin: 0;
 }
 
 .justify-content-center{
@@ -18,8 +25,7 @@ body{
     flex-wrap: wrap;
     width: 500px;
     margin: auto;
-    margin: 10px;
-    margin-top: 50px;
+    margin: 20px;
 }
 
 .form-control{
@@ -30,7 +36,7 @@ body{
 }
 .btn{
     border-radius: 10px;
-    background-color: #92C401;
+    background-color: rgba(149, 198, 1);
 }
 
 .box-container{
@@ -38,6 +44,8 @@ body{
     height: 500px;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 10px;
+    border: 50px groove rgba(149, 198, 1);
 }
 
 .box{
@@ -53,14 +61,14 @@ body{
 }
 
 #city{
-    background-color: #92C401;
+    background-color: rgba(149, 198, 1, 0.60);
 }
 #temp{
-    background-color: #4D5519;
+    background-color: rgba(79, 87, 25, 0.60);
 }
 #humidity{
-    background-color: #6B9201;
+    background-color: rgba(108, 147, 1, 0.50);
 }
 #wind{
-    background-color: #AFD572;
+    background-color: rgba(176, 214, 115, 0.50);
 }
