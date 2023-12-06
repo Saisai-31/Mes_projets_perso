@@ -6,7 +6,7 @@ let apiCall = function(city){
     //Je prends l'url sur Open Weather, je met la ville et j'ajoute ma clé API
 //J'ajoute &units=metric pour transformer les température en Celcius
 //J'ajoute &lang=fr pour recevoir les information en francais
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b14f81eef1376a658018039c0e57b254&units=metric&lang=fr`;
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=metric&lang=fr`;
 
 fetch(url)
         .then((response) => {

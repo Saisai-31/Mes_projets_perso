@@ -4,7 +4,6 @@ body{
     background-repeat: no-repeat;
     min-height: 100vh;
     margin: 0;
-
 }
 h1{
     text-align: center;
@@ -45,7 +44,7 @@ h1{
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
-    border: 50px groove rgba(149, 198, 1);
+    border: 40px groove rgba(149, 198, 1);
 }
 
 .box{
@@ -55,7 +54,7 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
     gap: 10px;
 }
