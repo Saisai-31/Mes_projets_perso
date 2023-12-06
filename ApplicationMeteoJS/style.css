@@ -3,35 +3,64 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+
+}
+
+.justify-content-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 500px;
+    margin: auto;
+    margin: 10px;
+    margin-top: 50px;
+}
+
+.form-control{
+    width: 380px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.btn{
+    border-radius: 10px;
+    background-color: #92C401;
 }
 
 .box-container{
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .box{
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     color: white;
+    gap: 10px;
 }
 
 #city{
-    background-color: rgba(41, 128, 185, 0.75);
+    background-color: #92C401;
 }
 #temp{
-    background-color: rgba(43, 78, 101, 0.75);
+    background-color: #4D5519;
 }
 #humidity{
-    background-color: rgba(52, 152, 219,0.75);
+    background-color: #6B9201;
 }
 #wind{
-    background-color: rgba(143,146,154,0.75);
+    background-color: #AFD572;
 }

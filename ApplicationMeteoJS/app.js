@@ -34,3 +34,6 @@ document.querySelector('form').addEventListener('submit', function (e){
 
     apiCall(ville);
 });
+
+/* Appel par defaut au chargement de la page */
+apiCall('Orléans');
